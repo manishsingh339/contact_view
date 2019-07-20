@@ -1,0 +1,51 @@
+package com.contact_view.entity;
+
+import lombok.Data;
+@Data
+public class Contact {
+    private String _id;
+    private String name;
+    private String givenName;
+    private String additionalName;
+    private String familyName;
+    private String yomiName;
+    private String givenNameYomi;
+    private String additionalNameYomi;
+    private String familyNameYomi;
+    private String namePrefix;
+    private String nameSuffix;
+    private String initials;
+    private String nickname;
+    private String shortName;
+    private String maidenName;
+    private String birthday;
+    private String gender;
+    private String location;
+    private String billingInformation;
+    private String directoryServer;
+    private String mileage;
+    private String occupation;
+    private String hobby;
+    private String sensitivity;
+    private String priority;
+    private String subject;
+    private String notes;
+    private String language;
+    private String photo;
+    private String groupMembership;
+    private String email1Type;
+    private String email1Value;
+    private String phone1Type;
+    private String phone1Value;
+    private String phone2Type;
+    private String phone2Value;
+    private String address1Type;
+    private String address1Formatted;
+    private String address1Street;
+    private String address1City;
+    private String address1PoBox;
+    private String address1Region;
+    private String address1PostalCode;
+    private String address1Country;
+    private String address1ExtendedAddress;
+}
