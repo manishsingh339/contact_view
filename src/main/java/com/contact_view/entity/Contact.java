@@ -36,9 +36,9 @@ public class Contact {
     private String email1Type;
     private String email1Value;
     private String phone1Type;
-    private String phone1Value;
+    private Long phone1Value;
     private String phone2Type;
-    private String phone2Value;
+    private Long phone2Value;
     private String address1Type;
     private String address1Formatted;
     private String address1Street;
