@@ -5,6 +5,7 @@ import com.contact_view.entity.Contact;
 import com.contact_view.serializers.MongoClientFactory;
 import com.mongodb.MongoExecutionTimeoutException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
@@ -50,6 +51,8 @@ public class ContactDAO extends MongoClientFactory{
         List<CallUsage> callUsages = null;
         try {
             query.addCriteria(Criteria.where("month").is(month));
+            Sort sort = new Sort(Sort.Direction.ASC, "callTime");
+            query.with(sort);
             callUsages = getMongoOperations().find(query, CallUsage.class, CallUsage.class.getSimpleName());
             System.out.println("callUsages:: "+ callUsages);
         } catch (MongoExecutionTimeoutException e) {

@@ -10,4 +10,5 @@ public class CallUsage {
    private Long number;
    private Long duration;
    private String name;
+   private Long callTime;
 }
