@@ -3,6 +3,7 @@ package com.contact_view.manager;
 import com.contact_view.dao.ContactDAO;
 import com.contact_view.entity.CallUsage;
 import com.contact_view.entity.Contact;
+import com.contact_view.entity.MonthlyReport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -53,12 +54,6 @@ public class ContactManager {
             System.out.println("number:: "+ month);
             callUsages = contactDAO.getCallUsagesByMonth(month);
 //            if(callUsages != null && !callUsages.isEmpty()) {
-//                Collections.sort(callUsages, new Comparator<CallUsage>() {
-//                    @Override
-//                    public int compare(CallUsage o1, CallUsage o2) {
-//                        return o1.getCallTime().compareTo(o2.getCallTime());
-//                    }
-//                });
 //                for (CallUsage callUsage: callUsages) {
 //                    callUsage.setName(getUserNameByNumber(callUsage.getNumber()));
 //                }
@@ -67,6 +62,16 @@ public class ContactManager {
             e.printStackTrace();
         }
         return  callUsages;
+    }
+
+    public List<MonthlyReport> usagesReportByMonth(String month) {
+        List<MonthlyReport> reports = null;
+        try {
+            reports = contactDAO.usagesReportByMonth(month);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return reports;
     }
 
     public String getUserNameByNumber(Long number) throws Exception{
@@ -86,4 +91,5 @@ public class ContactManager {
         }
         return name;
     }
+
 }

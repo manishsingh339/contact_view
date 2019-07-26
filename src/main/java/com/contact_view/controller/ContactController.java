@@ -2,6 +2,7 @@ package com.contact_view.controller;
 
 import com.contact_view.entity.CallUsage;
 import com.contact_view.entity.Contact;
+import com.contact_view.entity.MonthlyReport;
 import com.contact_view.manager.ContactManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -30,5 +31,10 @@ public class ContactController {
     @RequestMapping(value = "/usagesByMonth", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<CallUsage> usagesByMonth(@RequestParam(value = "month", required = true) String month){
         return contactManager.getCallUsagesByMonth(month);
+    }
+
+    @RequestMapping(value = "/usagesReportByMonth", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MonthlyReport> usagesReportByMonth(@RequestParam(value = "month", required = true) String month){
+        return contactManager.usagesReportByMonth( month );
     }
 }

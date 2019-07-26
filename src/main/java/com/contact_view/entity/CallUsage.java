@@ -1,7 +1,9 @@
 package com.contact_view.entity;
 import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
+@Document("CallUsage")
 public class CallUsage {
    private Long slNo;
    private String month;
