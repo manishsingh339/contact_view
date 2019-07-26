@@ -45,6 +45,8 @@ public class ContactDAO extends MongoClientFactory{
         List<CallUsage> callUsages = null;
         try {
             query.addCriteria(Criteria.where("number").is(number));
+            Sort sort = new Sort(Sort.Direction.DESC, "callTime");
+            query.with(sort);
             callUsages = getMongoOperations().find(query, CallUsage.class, CallUsage.class.getSimpleName());
             System.out.println("callUsages:: "+ callUsages);
         } catch (MongoExecutionTimeoutException e) {

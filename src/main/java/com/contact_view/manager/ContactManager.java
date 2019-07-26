@@ -31,17 +31,17 @@ public class ContactManager {
         try {
             System.out.println("number:: "+ number);
             callUsages = contactDAO.getCallUsagesByNumber(number);
-            if(callUsages != null && !callUsages.isEmpty()) {
-                Collections.sort(callUsages, new Comparator<CallUsage>() {
-                    @Override
-                    public int compare(CallUsage o1, CallUsage o2) {
-                        return o2.getDuration().compareTo(o1.getDuration());
-                    }
-                });
-                for (CallUsage callUsage: callUsages) {
-                    callUsage.setName(getUserNameByNumber(callUsage.getNumber()));
-                }
-            }
+//            if(callUsages != null && !callUsages.isEmpty()) {
+//                Collections.sort(callUsages, new Comparator<CallUsage>() {
+//                    @Override
+//                    public int compare(CallUsage o1, CallUsage o2) {
+//                        return o2.getDuration().compareTo(o1.getDuration());
+//                    }
+//                });
+//                for (CallUsage callUsage: callUsages) {
+//                    callUsage.setName(getUserNameByNumber(callUsage.getNumber()));
+//                }
+//            }
         } catch (Exception e) {
             e.printStackTrace();
         }
